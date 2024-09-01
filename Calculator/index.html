@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="view">
+        <div class="calculator">
+            <input type="text" class="display" disabled />
+        </div>
+        <div class="btn">
+            <button onclick="appendCharacter('7')" id="btn">7</button>
+            <button onclick="appendCharacter('8')" id="btn">8</button>
+            <button onclick="appendcharacter('9')" id="btn">9</button>
+            <button onclick="backSpace()" id="btn">DEL</button>
+            <button onclick="clearScreen()" id="btn">C</button>
+            <button onclick="appendCharacter('4')" id="btn">4</button>
+            <button onclick="appendCharacter('5')" id="btn">5</button>
+            <button onclick="appendCharacter('6')" id="btn">6</button>
+            <button onclick="appendCharacter('*')" id="btn operator">X</button>
+            <button onclick="appendCharacter('/')" id="btn operator">/</button>
+            <button onclick="appendCharacter('1')" id="btn">1</button>
+            <button onclick="appendCharacter('2')" id="btn">2</button>
+            <button onclick="appendCharacter('3')" id="btn">3</button>
+            <button onclick="appendCharacter('+')" id="btn operator">+</button>
+            <button onclick="appendCharacter('-')" id="btn operator">-</button>
+            <button onclick="appendCharacter('0')" id="btn">0</button>
+            <button onclick="appendCharacter('.')" id="btn">.</button>
+            <button onclick="calculateResult()" id="btn equal">=</button>
+        </div>
+    </div>
+
+    
+    <script src="./script/app.js"></script>
+</body>
+</html>

@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TIP CONVERTER</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
-    
+    <div class="calc">
+      <h1>Tip Calculator</h1>
+      <form action="">
+        <div>
+          <label for="">Bill:</label>
+          <input type="text" placeholder="₦" id="bill" />
+        </div>
+        <div>
+          <label for="">Rate Service:</label>
+          <select id="rate">
+            <option value="0" disabled selected>-- Select an option --</option>
+            <option value="0.2">20% - Premium</option>
+            <option value="0.15">15% - Excellent</option>
+            <option value="0.1">10% - Good</option>
+            <option value="0.05">5% - fair</option>
+          </select>
+        </div>
+        <button type="button" class="btn">Calculate Tip</button>
+        <p class="error">
+          ERROR! Please, enter a bill and rate service. Thanks.
+        </p>
+      </form>
+      <div class="result">
+        <p class="tip">Tip Amount: ₦0</p>
+        <p class="total">Tip Amount: ₦0</p>
+      </div>
+    </div>
+    <script src="./script/app.js"></script>
+  </body>
+</html>
+
 </body>
 </html>

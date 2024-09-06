@@ -1,26 +1,45 @@
-let guessInput = document.querySelector('#guess-input');
-let guessBtn = document.querySelector('#guess-btn');
-let attemptsDisplay = document.querySelector('#attempts');
-let restartBtn = document.querySelector('#restart-btn');
-let resultDisplay = document.querySelector('result');
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+let attempts = 0;
 
-let numberToGuess = Math.floor(Math.random() * 100) + 1;
-let attempts = 0
+document.getElementById('guessBtn').addEventListener('click', checkGuess);
+document.getElementById('restartBtn').addEventListener('click', restartGame);
 
-guessBtn.addEventListener('click', () => {
-    let guess = parseInt(guessInput.value);
-    attempts++;
+function checkGuess() {
+  const guess = Number(document.getElementById('guessInput').value);
+  const message = document.getElementById('message');
+  const attemptsDisplay = document.getElementById('attempts');
 
-    if (isNaN(guess)) {
-        result.textContent = 'Please enter a valid number!';
-    } else if (guess < numberToGuess) {
-        result.textContent = 'Too low!';
-    } else if (guess > numberToGuess) {
-        result.textContent = 'Too high!';
-    } else {
-        result.textContent = 'Correct!';
-    }
+  if (guess < 1 || guess > 100) {
+    message.textContent = 'Please enter a number between 1 and 100!';
+    return;
+  }
 
-    attemptsDisplay.textContent = ` ${attempts}`;
-    guessInput.value = '';
-});
+  attempts++;
+  attemptsDisplay.textContent = `Attempts: ${attempts}`;
+
+  if (guess === randomNumber) {
+    message.textContent = `Congratulations! You guessed the correct number in ${attempts} attempts.`;
+    disableInput();
+  } else if (guess > randomNumber) {
+    message.textContent = 'Too high! Try again.';
+  } else if (guess < randomNumber) {
+    message.textContent = 'Too low! Try again.';
+  }
+}
+
+function disableInput() {
+  document.getElementById('guessInput').disabled = true;
+  document.getElementById('guessBtn').disabled = true;
+}
+
+function restartGame() {
+  randomNumber = Math.floor(Math.random() * 100) + 1;
+  attempts = 0;
+
+  document.getElementById('guessInput').disabled = false;
+  document.getElementById('guessBtn').disabled = false;
+  document.getElementById('guessInput').value = '';
+  document.getElementById('message').textContent =
+    'Enter a number between 1 and 100:';
+  document.getElementById('attempts').textContent = 'Attempts: 0';
+}

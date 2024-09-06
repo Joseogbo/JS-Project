@@ -21,13 +21,13 @@ body {
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
 }
 
-#guess-input{
+#guessInput{
     width: 250px;
     padding: 10px 20px;
 }
 
-#guess-btn, #restart-btn{
-    background-color: #007bff;
+#guessBtn, #restartBtn{
+    background-color: #038517;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -35,8 +35,9 @@ body {
     cursor: pointer;
 }
 
-#guess-btn, #attempts, #restart-btn{
+#guessBtn, #attempts, #restartBtn{
     margin-top: 30px;
+    font-size: 16px;
 }
 
 #result {
